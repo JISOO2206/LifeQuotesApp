@@ -22,11 +22,11 @@ class ListViewAdapter(val List : MutableList<String>) : BaseAdapter() {
     override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
         var convertView = p1;
 
-        if(p1 == null){
+        if(convertView == null){
             convertView = LayoutInflater.from(p2?.context).inflate(R.layout.listview_item, p2, false)
         }
 
-        val listViewText = p1?.findViewById<TextView>(R.id.listViewTextSpace)
+        val listViewText = convertView?.findViewById<TextView>(R.id.listViewTextSpace)
         listViewText!!.text = List[p0]
 
         return convertView!!
