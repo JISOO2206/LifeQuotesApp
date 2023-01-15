@@ -14,6 +14,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val menuList = mutableListOf<String>()
+        menuList.add("닭볶음탕")
+        menuList.add("삼겹살")
+        menuList.add("불닭볶음면")
+        menuList.add("짜장면")
+        menuList.add("탕수육")
+        menuList.add("파스타")
+        menuList.add("곱창")
+        menuList.add("치킨")
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.showAll.setOnClickListener {
 
@@ -21,5 +31,7 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
+
+        binding.menuTextSpace.setText(menuList.random())
     }
 }
